@@ -1,7 +1,6 @@
 /* Import Google Fonts */
-@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
-@import "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap";
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Press%20Start%202P");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
@@ -26,6 +25,8 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   text-align: center;
+  line-height: 1.6;
+  /* Improved line height for readability */
 }
 
 /* Navigation Bar */
@@ -34,21 +35,28 @@ body {
   justify-content: center;
   align-items: center;
   list-style: none;
-  padding: 20px;
+  padding: 10px 0;
+  /* Reduced padding for smaller screens */
   background: var(--border);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid var(--primary);
   font-family: 'Press Start 2P', Arial, sans-serif;
+  overflow-x: auto;
+  /* Enable horizontal scrolling on small screens */
+  white-space: nowrap;
+  /* Prevent wrapping of navigation items */
 }
 
 #myNavList li {
-  margin: 0 20px;
+  margin: 0 10px;
+  /* Reduced margin for smaller screens */
 }
 
 #myNavList a {
   text-decoration: none;
   color: #df8e1d;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  /* Reduced font size for better fit */
   position: relative;
   transition: color 0.3s ease;
 }
@@ -60,23 +68,27 @@ body {
 
 /* Header Styling */
 header {
-  padding-top: 30px;
+  padding-top: 20px;
+  /* Reduced padding for smaller screens */
 }
 
 .main-title {
-  font-size: 6rem;
+  font-size: 3rem;
+  /* Adjusted font size for smaller screens */
   font-weight: bold;
-  /*color: var(--primary);*/
   color: #f5c2e7;
   text-shadow: 0px 0px 6px var(--title-glow);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  /* Reduced margin for smaller screens */
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 2.5rem;
+  /* Adjusted font size for smaller screens */
   font-family: 'Orbitron', sans-serif;
   color: var(--highlight);
-  margin-top: 50px;
+  margin-top: 30px;
+  /* Reduced margin for smaller screens */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -87,41 +99,49 @@ h1:hover {
 
 /* Blockquote */
 blockquote {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  /* Adjusted font size for smaller screens */
   color: var(--secondary);
   background-color: var(--border);
-  padding: 20px;
+  padding: 15px;
+  /* Reduced padding for smaller screens */
   border-left: 5px solid var(--primary);
   border-radius: 5px;
-  width: 60%;
-  margin: 50px auto;
+  width: 80%;
+  margin: 30px auto;
+  /* Reduced margin for smaller screens */
   transition: transform 0.3s ease;
   font-family: 'Bebas Neue', sans-serif;
 }
 
 blockquote:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* About Section */
 .about {
-  padding: 40px 20px;
+  padding: 30px 15px;
+  /* Reduced padding for smaller screens */
   background-color: var(--border);
   border-radius: 10px;
-  margin: 80px auto;
-  max-width: 800px;
+  margin: 40px auto;
+  /* Reduced margin for smaller screens */
+  max-width: 90%;
+  /* Increased max-width to take more space on larger screens */
   text-align: center;
   box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
   font-family: 'Bebas Neue', sans-serif;
 }
 
 .about h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  /* Adjusted font size for smaller screens */
   color: var(--secondary);
 }
 
 .about p {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
   line-height: 1.6;
   color: var(--foreground);
   transition: color 0.3s ease;
@@ -142,49 +162,42 @@ blockquote:hover {
   text-decoration: underline;
 }
 
-
 /* Blog Post Section */
 .blog-posts {
   font-family: 'Lora', serif;
-  padding: 40px 20px;
+  padding: 30px 15px;
+  /* Reduced padding for smaller screens */
   background-color: var(--border);
   border-radius: 10px;
-  margin: 60px auto;
-  max-width: 1000px;
+  margin: 40px auto;
+  /* Reduced margin for smaller screens */
+  max-width: 90%;
+  /* Increased max-width to take more space on larger screens */
   box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
 }
 
-
 .blog-posts img {
   max-width: 100%;
-  /* Ensures it stays within the container */
   height: auto;
-  /* Keeps the aspect ratio */
   display: block;
-  /* Prevents extra space below the image */
   margin: 0 auto;
-  /* Centers the image */
   border-radius: 8px;
-  /* Optional: rounded corners */
 }
 
-
-
 .post {
-  max-width: 100%;
-  /* Ensure post container respects parent width */
-  overflow: hidden;
-  /* Prevents image overflow */
-  padding: 20px;
+  padding: 15px;
+  /* Reduced padding for smaller screens */
   border-radius: 8px;
   background-color: var(--background);
+  margin-bottom: 20px;
+  /* Added margin between posts */
 }
 
 .post .read-more {
   color: #ea76cb;
-  /* Custom color for Read More */
   border-bottom-color: #ffcc00;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  /* Adjusted font size for smaller screens */
 }
 
 .post .read-more:hover {
@@ -194,30 +207,32 @@ blockquote:hover {
 
 .post-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 5.0rem;
+  font-size: 3.0rem;
+  /* Adjusted font size for smaller screens */
   color: #8839ef;
-
   margin-bottom: 10px;
 }
 
 .sub-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.0rem;
+  font-size: 2.0rem;
+  /* Adjusted font size for smaller screens */
   color: #dd7878;
-
   margin-bottom: 10px;
   font-style: italic;
   margin-top: 5px;
 }
 
 .post-date {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  /* Adjusted font size for smaller screens */
   margin-bottom: 15px;
   color: #d20f39;
 }
 
 .post-author {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  /* Adjusted font size for smaller screens */
   color: #ea76cb;
   margin-bottom: 15px;
   font-weight: bold;
@@ -225,37 +240,34 @@ blockquote:hover {
 }
 
 .post-summary {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
   color: #fe640b;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .post-content p {
-  font-size: 1.4rem;
-  /* Adjust as needed */
-  line-height: 1.8;
-  /* Improves readability */
+  font-size: 1.1rem;
+  /* Adjusted font size for smaller screens */
+  line-height: 1.6;
   color: var(--foreground);
-  margin-bottom: 20px;
-  /* Adds spacing between paragraphs */
-  text-align: justify
+  margin-bottom: 15px;
+  /* Reduced margin for smaller screens */
+  text-align: justify;
 }
 
 .post-content h1 {
   text-decoration: underline;
 }
 
-;
-
-
 .read-more {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
   color: #cdd6f4;
   text-decoration: none;
   border-bottom: 2px solid var(--primary);
   padding-bottom: 5px;
-  /*transition: color 0.3s ease, border-color 0.3s ease;*/
 }
 
 .read-more a {
@@ -267,24 +279,27 @@ blockquote:hover {
   border-color: var(--secondary);
 }
 
+/* Footer */
+footer {
+  padding: 20px;
+  /* Reduced padding for smaller screens */
+}
+
 footer h2 a {
   color: #ff5733;
-  /* Change to your preferred color */
   text-decoration: none;
-  /* Removes underline if needed */
 }
 
 footer h2 a:hover {
   color: #c70039;
-  /* Color on hover */
 }
-
-
 
 /* Library Table Styles */
 .library-table {
-  width: 80%;
-  margin: auto;
+  width: 95%;
+  /* Adjusted width for smaller screens */
+  margin: 20px auto;
+  /* Added margin for spacing */
   border-collapse: collapse;
   background: var(--background);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -296,23 +311,25 @@ footer h2 a:hover {
 
 .library-table th,
 .library-table td {
-  padding: 12px;
+  padding: 8px;
+  /* Reduced padding for smaller screens */
   text-align: left;
   border-bottom: 2px solid var(--border);
-  /* Line separator */
+  font-size: 0.9rem;
+  /* Adjusted font size for smaller screens */
 }
 
 .library-table th {
   background-color: var(--border);
   color: var(--primary);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
 }
 
 .library-table tr:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Links inside the table */
 .library-table a {
   text-decoration: none;
   color: var(--secondary);
@@ -324,77 +341,82 @@ footer h2 a:hover {
   color: var(--highlight);
 }
 
-
 /* Blockquote for library-bq */
 .library-bq {
   font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  /*color: var(--foreground);*/
+  font-size: 1.2rem;
+  /* Adjusted font size for smaller screens */
   color: #ea76cb;
   background-color: var(--border);
-  padding: 20px;
+  padding: 15px;
+  /* Reduced padding for smaller screens */
   border-left: 5px solid var(--primary);
   border-radius: 10px;
-  width: 80%;
-  margin: 50px auto;
+  width: 90%;
+  /* Adjusted width for smaller screens */
+  margin: 30px auto;
+  /* Reduced margin for smaller screens */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Blockquote hover effect (pop-up effect) */
 .library-bq:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Links inside blockquote */
 .library-bq a {
   color: #d20f39;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Hover effect for links */
 .library-bq a:hover {
-  /*color: var(--highlight);*/
   color: #8839ef;
   text-decoration: underline;
 }
 
-/* Active (clicked) links */
 .library-bq a:active {
   color: var(--accent);
 }
 
+/* Library Heading */
 .library-heading {
-  font-size: 3rem;
+  font-size: 2rem;
+  /* Adjusted font size for smaller screens */
 }
 
 /* Girlfriend Application Form */
 .container {
   background: var(--border);
-  padding: 20px;
+  padding: 15px;
+  /* Reduced padding for smaller screens */
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
+  /* Adjusted width for smaller screens */
   max-width: 400px;
   margin: auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
+.container h2 {
   color: var(--primary);
   font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  /* Adjusted font size for smaller screens */
 }
 
-label {
+.container label {
   font-weight: bold;
   display: block;
   margin-top: 10px;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
 }
 
-input,
-select,
-textarea {
+.container input,
+.container select,
+.container textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -402,9 +424,11 @@ textarea {
   border-radius: 5px;
   background-color: var(--background);
   color: var(--foreground);
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
 }
 
-button {
+.container button {
   background-color: var(--accent);
   color: var(--background);
   border: none;
@@ -414,33 +438,39 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Press Start 2P', Arial, sans-serif;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
 }
 
-button:hover {
+.container button:hover {
   background-color: var(--secondary);
   text-shadow: 0px 0px 8px var(--secondary);
 }
-
 
 /* Yes/No Box */
 .yes-no-box {
   background-color: var(--border);
   color: var(--foreground);
   font-family: 'Orbitron', sans-serif;
-  padding: 20px;
+  padding: 15px;
+  /* Reduced padding for smaller screens */
   border-radius: 10px;
   text-align: center;
-  width: 200px;
+  width: 80%;
+  /* Adjusted width for smaller screens */
   margin: 20px auto;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Yes/No Buttons */
 .yes-no-box button {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  /* Adjusted font size for smaller screens */
   font-family: 'Press Start 2P', sans-serif;
-  padding: 10px 15px;
-  margin: 10px;
+  padding: 8px 12px;
+  /* Reduced padding for smaller screens */
+  margin: 8px;
+  /* Reduced margin for smaller screens */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -460,4 +490,217 @@ button:hover {
 .yes-no-box button:hover {
   transform: scale(1.1);
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Larger screens such as desktops */
+@media screen and (min-width: 1920px) {
+  .main-title {
+    font-size: 6rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  blockquote {
+    font-size: 1.5rem;
+  }
+
+  .about {
+    max-width: 800px;
+  }
+
+  .library-table {
+    width: 80%;
+  }
+
+  .library-bq {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+
+  .library-heading {
+    font-size: 3rem;
+  }
+}
+
+/* For Tablets and larger smartphones */
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  #myNavList {
+    padding: 15px 0;
+  }
+
+  #myNavList li {
+    margin: 0 15px;
+  }
+
+  #myNavList a {
+    font-size: 1.1rem;
+  }
+
+  .main-title {
+    font-size: 4rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  blockquote {
+    font-size: 1.3rem;
+  }
+
+  .about {
+    max-width: 70%;
+    padding: 35px 20px;
+  }
+
+  .blog-posts {
+    max-width: 90%;
+  }
+
+  .post-title {
+    font-size: 3.5rem;
+  }
+
+  .sub-title {
+    font-size: 2.5rem;
+  }
+
+  .library-table {
+    width: 90%;
+  }
+
+  .library-bq {
+    width: 90%;
+    font-size: 1.3rem;
+  }
+
+  .library-heading {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    width: 70%;
+  }
+}
+
+/* For Mobile Devices */
+@media screen and (max-width: 599px) {
+  #myNavList {
+    flex-direction: column;
+    /* Stack navigation items vertically */
+    align-items: stretch;
+    /* Make items take full width */
+    padding: 10px;
+  }
+
+  #myNavList li {
+    margin: 5px 0;
+    /* Add vertical spacing */
+    text-align: center;
+    /* Center the text */
+  }
+
+  #myNavList a {
+    display: block;
+    /* Make each link a block element */
+    padding: 10px;
+    /* Add some padding for better touch area */
+    border-bottom: 1px solid var(--border);
+    /* Add a border to separate items */
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  blockquote {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .about {
+    padding: 20px 10px;
+  }
+
+  .blog-posts {
+    padding: 20px 10px;
+  }
+
+  .post-title {
+    font-size: 2.5rem;
+  }
+
+  .sub-title {
+    font-size: 1.8rem;
+  }
+
+  .post-date {
+    font-size: 1rem;
+  }
+
+  .post-author {
+    font-size: 1rem;
+  }
+
+  .post-summary {
+    font-size: 0.9rem;
+  }
+
+  .post-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .library-table {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .library-table th,
+  .library-table td {
+    padding: 6px;
+  }
+
+  .library-table th {
+    font-size: 0.9rem;
+  }
+
+  .library-bq {
+    width: 95%;
+    font-size: 1.1rem;
+  }
+
+  .library-heading {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .container label {
+    font-size: 0.9rem;
+  }
+
+  .yes-no-box {
+    width: 90%;
+  }
+
+  .yes-no-box button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    margin: 6px;
+  }
 }
