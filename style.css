@@ -386,49 +386,90 @@ footer h2 a:hover {
   /* Adjusted font size for smaller screens */
 }
 
-/* Girlfriend Application Form */
+
+/* Form Styling */
 .container {
   background: var(--border);
-  padding: 15px;
-  /* Reduced padding for smaller screens */
+  padding: 20px;
   border-radius: 10px;
   width: 90%;
-  /* Adjusted width for smaller screens */
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Lora', serif;
 }
 
 .container h2 {
   color: var(--primary);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  /* Adjusted font size for smaller screens */
+  text-align: center;
 }
 
 .container label {
-  font-weight: bold;
+  font-size: 1.2rem;
+  /* Larger text */
+  font-family: 'Lora', serif;
+  /* More readable font */
   display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  /* Adjusted font size for smaller screens */
+  /* Ensure it's above the input */
+  margin-bottom: 8px;
+  /* Add spacing below */
+  text-align: center;
+  /* Center the text */
+  color: var(--secondary);
+  /* Use secondary color */
 }
 
 .container input,
 .container select,
 .container textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  /* Add spacing */
   border: 1px solid var(--border);
   border-radius: 5px;
   background-color: var(--background);
   color: var(--foreground);
   font-size: 1rem;
-  /* Adjusted font size for smaller screens */
+  text-align: center;
+  /* Center text inside input fields */
 }
 
-.container button {
+.container p {
+  font-size: 1.2rem;
+  font-family: 'Lora', serif;
+  text-align: center;
+  /* Center text above radio buttons */
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+fieldset {
+  border: none;
+  /* Remove default border */
+  text-align: center;
+  /* Center the entire fieldset */
+  margin-bottom: 15px;
+}
+
+/* Align radio buttons properly */
+fieldset input[type="radio"] {
+  margin: 5px;
+}
+
+fieldset label {
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+  color: var(--highlight);
+  margin-right: 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+button {
   background-color: var(--accent);
   color: var(--background);
   border: none;
@@ -437,59 +478,44 @@ footer h2 a:hover {
   width: 100%;
   border-radius: 5px;
   cursor: pointer;
-  font-family: 'Press Start 2P', Arial, sans-serif;
   font-size: 1rem;
-  /* Adjusted font size for smaller screens */
 }
 
-.container button:hover {
+button:hover {
   background-color: var(--secondary);
   text-shadow: 0px 0px 8px var(--secondary);
 }
 
-/* Yes/No Box */
-.yes-no-box {
-  background-color: var(--border);
-  color: var(--foreground);
-  font-family: 'Orbitron', sans-serif;
-  padding: 15px;
-  /* Reduced padding for smaller screens */
-  border-radius: 10px;
+
+
+/* Center the text above radio buttons */
+.container .radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.container .radio-group p {
+  font-size: 1.2rem;
+  font-family: 'Lora', serif;
   text-align: center;
-  width: 80%;
-  /* Adjusted width for smaller screens */
-  margin: 20px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* Ensures question text is centered */
+  margin-bottom: 10px;
+  color: var(--primary);
 }
 
-/* Yes/No Buttons */
-.yes-no-box button {
+/* Center the radio buttons and labels */
+.container .radio-group label {
+  display: inline-block;
+  margin-right: 15px;
   font-size: 1rem;
-  /* Adjusted font size for smaller screens */
-  font-family: 'Press Start 2P', sans-serif;
-  padding: 8px 12px;
-  /* Reduced padding for smaller screens */
-  margin: 8px;
-  /* Reduced margin for smaller screens */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: var(--highlight);
 }
 
-.yes-no-box .yes-btn {
-  background-color: var(--highlight);
-  color: var(--background);
-}
-
-.yes-no-box .no-btn {
-  background-color: var(--accent);
-  color: var(--background);
-}
-
-.yes-no-box button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+/* Make sure radio buttons are aligned properly */
+.container .radio-group input[type="radio"] {
+  margin-right: 5px;
 }
 
 /* Media Queries for Responsiveness */
