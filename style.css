@@ -1,62 +1,484 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Import only the fonts that are actively used in the CSS */
+@import url("https://fonts.googleapis.com/css?family=Press%20Start%202P");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Labyrinth of Mirrors</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
+/* Catppuccin Mocha Color Scheme */
+:root {
+  --background: #1e1e2e;
+  --foreground: #cdd6f4;
+  --primary: #f5e0dc;
+  --secondary: #89b4fa;
+  --accent: #f38ba8;
+  --highlight: #a6e3a1;
+  --border: #45475a;
+  --title-glow: rgba(245, 224, 220, 0.6);
 
-<body>
-  <ol id="myNavList">
-    <li><a class="arrow" href="../index.html"><i class="fas fa-arrow-alt-right"></i>HOME</a></li>
-    <li><a class="arrow" href="blog.html"><i class="fas fa-arrow-alt-right"></i>WRITTINGS</a></li>
-    <li><a class="arrow" href="library.html"><i class="fas fa-arrow-alt-right"></i>LIBRARY OF BABEL</a></li>
-    <li><a class="arrow" href="about.html"><i class="fas fa-arrow-alt-right"></i>ABOUT</a></li>
-    <li><a class="arrow" href="gf.html"><i class="fas fa-arrow-alt-right"></i>GF APPLICATION</a></li>
-  </ol>
-  <header>
-    <h1 class="main-title">ABOUT</h1>
-  </header>
+  /* Additional theme colors */
+  --link-color: #df8e1d;
+  --link-hover: var(--secondary);
+  --post-title: #8839ef;
+  --post-subtitle: #dd7878;
+  --post-date: #d20f39;
+  --post-author: #ea76cb;
+  --post-summary: #fe640b;
+}
 
-  <section class="about">
-    <p> This website is an archive and blog written and run by <a href="https://x.com/wittgenfine"
-        target="_blank">@wittgenfine</a>. The site also includes an ever-expanding
-      library of writtings and content that I have enjoyed and or found beneficial in some way. I will be posting all
-      past and future blogs on the website and will also include a link to my substack where these writtings will also
-      be shared. If you wish to contact me please use one of the links below. I enjoy philopsophy particularly
-      epistomology
-      and I also dablle in some psychology. Technically I am a software dev by training and although I am interested in
-      the field I typically don't talk about it much since I don't have very many interesting things to say about the
-      topic excpt that
-      I think this AI hype is a bubble. I write mostly short stories but also blogs/essays about philsophy pop culture
-      and psychology. I made
-      this site mostly out of boredom and because I don't like being reliant on Substack and I just wanted an archieve
-      of my online
-      activity and a place to share some writtings that I like. If you think the style of this website sucks
-      you're probably right I hate anything to do with webdev and I just used a nvim theme I like for the colorscheme.
-      Also I do occasionally write screenplays. Sometimes I even get paid for it. Don't tell anyone though.
-      The GF application page is a joke. Unless... <br>
-      I hope you find what you
-      are
-      looking
-      for.
-      <br> (Site still a work in
-      progress)
-    </p>
+/* Common styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <h2>Contact/Links</h2>
-    <p><strong>Twitter:</strong> <a href="https://x.com/wittgenfine" target="_blank">@wittgenfine</a></p>
+body {
+  font-family: 'Orbitron', Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  text-align: center;
+  line-height: 1.6;
+}
 
-    <p><strong>Email:</strong> <a href="mailto:wittgenfine@protonmail.com"
-        target="_blank">wittgenfine@protonmail.com</a></p>
+/* Navigation Bar - Improved responsiveness */
+#myNavList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 10px;
+  background: var(--border);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--primary);
+  font-family: 'Press Start 2P', Arial, sans-serif;
+}
 
-    <p><strong>Substack:</strong> <a href="https://wittgenfine337.substack.com/" target="_blank">Wittgenfine</a></p>
-    <p><strong>Youtube:</strong> <a href="https://www.youtube.com/@wittgenfine4234" target="_blank">Wittgenfine's
-        Youtube</a></p>
-  </section>
+#myNavList a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 5px 10px;
+}
 
-</body>
+#myNavList a:hover {
+  color: var(--link-hover);
+  text-shadow: 0px 0px 8px var(--link-hover);
+}
 
-</html>
+/* Header Styles */
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: bold;
+  color: #f5c2e7;
+  text-shadow: 0px 0px 6px var(--title-glow);
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--highlight);
+  margin-top: 30px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+  color: var(--accent);
+  text-shadow: 0px 0px 8px var(--accent);
+}
+
+h1 a {
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--highlight);
+  margin-top: 30px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1 a:hover {
+  color: var(--accent);
+  text-shadow: 0px 0px 8px var(--accent);
+
+}
+
+/* Blockquote */
+blockquote {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  background-color: var(--border);
+  padding: 15px;
+  border-left: 5px solid var(--primary);
+  border-radius: 5px;
+  width: 80%;
+  margin: 30px auto;
+  transition: transform 0.3s ease;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+blockquote:hover {
+  transform: scale(1.03);
+}
+
+/* About Section - Restored */
+.about {
+  padding: 30px 15px;
+  background-color: var(--border);
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+.about p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+.about p:hover {
+  color: var(--highlight);
+}
+
+.about a {
+  /*color: var(--primary);*/
+  color: #ea76cb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Blog Posts */
+.blog-posts {
+  font-family: 'Lora', serif;
+  padding: 30px 15px;
+  background-color: var(--border);
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 90%;
+  box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
+}
+
+.post {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--background);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Add proper image handling for blog posts */
+.blog-posts img,
+.post img,
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.0rem;
+  color: var(--post-title);
+  margin-bottom: 10px;
+}
+
+.sub-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.0rem;
+  color: var(--post-subtitle);
+  margin-bottom: 10px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.post-date {
+  font-size: 1.2rem;
+  color: var(--post-date);
+  color: #df8e1d;
+  margin-bottom: 15px;
+}
+
+.post-author {
+  font-size: 1.2rem;
+  color: var(--post-author);
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.post-summary {
+  font-size: 1.2rem;
+  color: var(--post-summary);
+  color: #40a02b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  color: #ea76cb;
+  font-size: 1.2rem;
+}
+
+.post-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.post-content h1 {
+  text-decoration: underline;
+}
+
+/* Library Table */
+.library-table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: var(--background);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Lora', serif;
+}
+
+.library-table th,
+.library-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  font-size: 0.9rem;
+  color: #ea76cb;
+}
+
+.library-table th {
+  background-color: var(--border);
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.library-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+.library-table a {
+  color: #d20f39;
+  /* Normal color */
+  transition: color 0.3s ease-in-out;
+  /* Smooth transition */
+}
+
+.library-table a:hover {
+  color: #ff3b5c;
+  /* Slightly lighter red */
+}
+
+.library-heading {
+  font-size: 2rem;
+  color: #e64553;
+}
+
+.container {
+  background: var(--border);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  font-family: 'Lora', serif;
+}
+
+/* Form Heading */
+.container h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 0px 0px 8px var(--title-glow);
+}
+
+/* Labels */
+.container label {
+  font-size: 1.2rem;
+  font-family: 'Lora', serif;
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* Input Fields */
+.container input,
+.container select,
+.container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0 15px 0;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Hover & Focus Effects */
+.container input:focus,
+.container textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0px 0px 10px var(--accent);
+  outline: none;
+}
+
+/* Radio Button Styles */
+.radio-group {
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 8px;
+}
+
+.radio-group p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.radio-group input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.radio-group input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 50%;
+}
+
+.radio-group label {
+  font-size: 1rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.radio-group label:hover {
+  color: var(--accent);
+}
+
+/* Submit Button */
+button {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: var(--secondary);
+  box-shadow: 0px 0px 12px var(--secondary);
+}
+
+
+
+
+/* Media Queries */
+@media screen and (min-width: 1920px) {
+  .main-title {
+    font-size: 6rem;
+  }
+
+  .about {
+    max-width: 800px;
+  }
+
+  .library-table {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .post-title {
+    font-size: 2.5rem;
+  }
+
+  .sub-title {
+    font-size: 1.8rem;
+  }
+
+  .post-date,
+  .post-author {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .container label {
+    font-size: 0.9rem;
+  }
+}
