@@ -1,7 +1,5 @@
-/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Press%20Start%202P");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
@@ -15,80 +13,74 @@
   --highlight: #a6e3a1;
   --border: #45475a;
   --title-glow: rgba(245, 224, 220, 0.6);
+
+  /* Additional theme colors */
+  --link-color: #df8e1d;
+  --link-hover: var(--secondary);
+  --post-title: #8839ef;
+  --post-subtitle: #dd7878;
+  --post-date: #d20f39;
+  --post-author: #ea76cb;
+  --post-summary: #fe640b;
 }
 
-/* General body styles */
-body {
-  font-family: 'Orbitron', Arial, sans-serif;
+/* Common styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', Arial, sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   text-align: center;
   line-height: 1.6;
-  /* Improved line height for readability */
 }
 
-/* Navigation Bar */
+/* Navigation Bar - Improved responsiveness */
 #myNavList {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   list-style: none;
-  padding: 10px 0;
-  /* Reduced padding for smaller screens */
+  padding: 10px;
   background: var(--border);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid var(--primary);
   font-family: 'Press Start 2P', Arial, sans-serif;
-  overflow-x: auto;
-  /* Enable horizontal scrolling on small screens */
-  white-space: nowrap;
-  /* Prevent wrapping of navigation items */
-}
-
-#myNavList li {
-  margin: 0 10px;
-  /* Reduced margin for smaller screens */
 }
 
 #myNavList a {
   text-decoration: none;
-  color: #df8e1d;
+  color: var(--link-color);
   font-size: 1rem;
-  /* Reduced font size for better fit */
-  position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 5px 10px;
 }
 
 #myNavList a:hover {
-  color: var(--secondary);
-  text-shadow: 0px 0px 8px var(--secondary);
+  color: var(--link-hover);
+  text-shadow: 0px 0px 8px var(--link-hover);
 }
 
-/* Header Styling */
-header {
-  padding-top: 20px;
-  /* Reduced padding for smaller screens */
-}
-
+/* Header Styles */
 .main-title {
-  font-size: 3rem;
-  /* Adjusted font size for smaller screens */
+  font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: bold;
   color: #f5c2e7;
   text-shadow: 0px 0px 6px var(--title-glow);
-  margin-bottom: 20px;
-  /* Reduced margin for smaller screens */
+  margin: 20px 0;
 }
 
 h1 {
-  font-size: 2.5rem;
-  /* Adjusted font size for smaller screens */
+  font-size: clamp(2rem, 4vw, 5rem);
   font-family: 'Orbitron', sans-serif;
   color: var(--highlight);
   margin-top: 30px;
-  /* Reduced margin for smaller screens */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -97,19 +89,30 @@ h1:hover {
   text-shadow: 0px 0px 8px var(--accent);
 }
 
+h1 a {
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--highlight);
+  margin-top: 30px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1 a:hover {
+  color: var(--accent);
+  text-shadow: 0px 0px 8px var(--accent);
+
+}
+
 /* Blockquote */
 blockquote {
-  font-size: 1.2rem;
-  /* Adjusted font size for smaller screens */
+  font-size: 1.5rem;
   color: var(--secondary);
   background-color: var(--border);
   padding: 15px;
-  /* Reduced padding for smaller screens */
   border-left: 5px solid var(--primary);
   border-radius: 5px;
   width: 80%;
   margin: 30px auto;
-  /* Reduced margin for smaller screens */
   transition: transform 0.3s ease;
   font-family: 'Bebas Neue', sans-serif;
 }
@@ -118,16 +121,13 @@ blockquote:hover {
   transform: scale(1.03);
 }
 
-/* About Section */
+/* About Section - Restored */
 .about {
   padding: 30px 15px;
-  /* Reduced padding for smaller screens */
   background-color: var(--border);
   border-radius: 10px;
   margin: 40px auto;
-  /* Reduced margin for smaller screens */
   max-width: 90%;
-  /* Increased max-width to take more space on larger screens */
   text-align: center;
   box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
   font-family: 'Bebas Neue', sans-serif;
@@ -135,13 +135,11 @@ blockquote:hover {
 
 .about h2 {
   font-size: 2rem;
-  /* Adjusted font size for smaller screens */
   color: var(--secondary);
 }
 
 .about p {
-  font-size: 1rem;
-  /* Adjusted font size for smaller screens */
+  font-size: 1.5rem;
   line-height: 1.6;
   color: var(--foreground);
   transition: color 0.3s ease;
@@ -152,7 +150,8 @@ blockquote:hover {
 }
 
 .about a {
-  color: var(--primary);
+  /*color: var(--primary);*/
+  color: #ea76cb;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -162,62 +161,48 @@ blockquote:hover {
   text-decoration: underline;
 }
 
-/* Blog Post Section */
+/* Blog Posts */
 .blog-posts {
   font-family: 'Lora', serif;
   padding: 30px 15px;
-  /* Reduced padding for smaller screens */
   background-color: var(--border);
   border-radius: 10px;
   margin: 40px auto;
-  /* Reduced margin for smaller screens */
   max-width: 90%;
-  /* Increased max-width to take more space on larger screens */
   box-shadow: 0px 0px 15px rgba(245, 224, 220, 0.4);
-}
-
-.blog-posts img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
 }
 
 .post {
   padding: 15px;
-  /* Reduced padding for smaller screens */
   border-radius: 8px;
   background-color: var(--background);
   margin-bottom: 20px;
-  /* Added margin between posts */
+  text-align: left;
 }
 
-.post .read-more {
-  color: #ea76cb;
-  border-bottom-color: #ffcc00;
-  font-size: 1.5rem;
-  /* Adjusted font size for smaller screens */
-}
-
-.post .read-more:hover {
-  color: #ffaa00;
-  border-bottom-color: #ffaa00;
+/* Add proper image handling for blog posts */
+.blog-posts img,
+.post img,
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .post-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.0rem;
-  /* Adjusted font size for smaller screens */
-  color: #8839ef;
+  color: var(--post-title);
   margin-bottom: 10px;
 }
 
 .sub-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2.0rem;
-  /* Adjusted font size for smaller screens */
-  color: #dd7878;
+  color: var(--post-subtitle);
   margin-bottom: 10px;
   font-style: italic;
   margin-top: 5px;
@@ -225,35 +210,37 @@ blockquote:hover {
 
 .post-date {
   font-size: 1.2rem;
-  /* Adjusted font size for smaller screens */
+  color: var(--post-date);
+  color: #df8e1d;
   margin-bottom: 15px;
-  color: #d20f39;
 }
 
 .post-author {
   font-size: 1.2rem;
-  /* Adjusted font size for smaller screens */
-  color: #ea76cb;
+  color: var(--post-author);
   margin-bottom: 15px;
   font-weight: bold;
   text-decoration: underline;
 }
 
 .post-summary {
-  font-size: 1rem;
-  /* Adjusted font size for smaller screens */
-  color: #fe640b;
+  font-size: 1.2rem;
+  color: var(--post-summary);
+  color: #40a02b;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
+.read-more {
+  color: #ea76cb;
+  font-size: 1.2rem;
+}
+
 .post-content p {
   font-size: 1.1rem;
-  /* Adjusted font size for smaller screens */
   line-height: 1.6;
   color: var(--foreground);
   margin-bottom: 15px;
-  /* Reduced margin for smaller screens */
   text-align: justify;
 }
 
@@ -261,277 +248,198 @@ blockquote:hover {
   text-decoration: underline;
 }
 
-.read-more {
-  font-size: 1rem;
-  /* Adjusted font size for smaller screens */
-  color: #cdd6f4;
-  text-decoration: none;
-  border-bottom: 2px solid var(--primary);
-  padding-bottom: 5px;
-}
-
-.read-more a {
-  color: white;
-}
-
-.read-more:hover {
-  color: green;
-  border-color: var(--secondary);
-}
-
-/* Footer */
-footer {
-  padding: 20px;
-  /* Reduced padding for smaller screens */
-}
-
-footer h2 a {
-  color: #ff5733;
-  text-decoration: none;
-}
-
-footer h2 a:hover {
-  color: #c70039;
-}
-
-/* Library Table Styles */
+/* Library Table */
 .library-table {
   width: 95%;
-  /* Adjusted width for smaller screens */
   margin: 20px auto;
-  /* Added margin for spacing */
   border-collapse: collapse;
   background: var(--background);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
-  color: var(--foreground);
   font-family: 'Lora', serif;
 }
 
 .library-table th,
 .library-table td {
   padding: 8px;
-  /* Reduced padding for smaller screens */
   text-align: left;
   border-bottom: 2px solid var(--border);
   font-size: 0.9rem;
-  /* Adjusted font size for smaller screens */
+  color: #ea76cb;
 }
 
 .library-table th {
   background-color: var(--border);
   color: var(--primary);
   font-size: 1rem;
-  /* Adjusted font size for smaller screens */
 }
 
 .library-table tr:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+
 .library-table a {
-  text-decoration: none;
+  color: #d20f39;
+  /* Normal color */
+  transition: color 0.3s ease-in-out;
+  /* Smooth transition */
+}
+
+.library-table a:hover {
+  color: #ff3b5c;
+  /* Slightly lighter red */
+}
+
+.library-heading {
+  font-size: 2rem;
+  color: #e64553;
+}
+
+.container {
+  background: var(--border);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  font-family: 'Lora', serif;
+}
+
+/* Form Heading */
+.container h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 0px 0px 8px var(--title-glow);
+}
+
+/* Labels */
+.container label {
+  font-size: 1.2rem;
+  font-family: 'Lora', serif;
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
   color: var(--secondary);
   font-weight: bold;
 }
 
-.library-table a:hover {
-  text-decoration: underline;
-  color: var(--highlight);
-}
-
-/* Blockquote for library-bq */
-.library-bq {
-  font-family: 'Lora', serif;
-  font-size: 1.2rem;
-  /* Adjusted font size for smaller screens */
-  color: #ea76cb;
-  background-color: var(--border);
-  padding: 15px;
-  /* Reduced padding for smaller screens */
-  border-left: 5px solid var(--primary);
-  border-radius: 10px;
-  width: 90%;
-  /* Adjusted width for smaller screens */
-  margin: 30px auto;
-  /* Reduced margin for smaller screens */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.library-bq:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.library-bq a {
-  color: #d20f39;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.library-bq a:hover {
-  color: #8839ef;
-  text-decoration: underline;
-}
-
-.library-bq a:active {
-  color: var(--accent);
-}
-
-/* Library Heading */
-.library-heading {
-  font-size: 2rem;
-  /* Adjusted font size for smaller screens */
-}
-
-
-/* Form Styling */
-.container {
-  background: var(--border);
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  margin: auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  font-family: 'Lora', serif;
-}
-
-.container h2 {
-  color: var(--primary);
-  text-align: center;
-}
-
-.container label {
-  font-size: 1.2rem;
-  /* Larger text */
-  font-family: 'Lora', serif;
-  /* More readable font */
-  display: block;
-  /* Ensure it's above the input */
-  margin-bottom: 8px;
-  /* Add spacing below */
-  text-align: center;
-  /* Center the text */
-  color: var(--secondary);
-  /* Use secondary color */
-}
-
+/* Input Fields */
 .container input,
 .container select,
 .container textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 5px 0 15px 0;
-  /* Add spacing */
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
   background-color: var(--background);
   color: var(--foreground);
   font-size: 1rem;
-  text-align: center;
-  /* Center text inside input fields */
+  text-align: left;
+  transition: all 0.3s ease-in-out;
 }
 
-.container p {
-  font-size: 1.2rem;
-  font-family: 'Lora', serif;
-  text-align: center;
-  /* Center text above radio buttons */
-  margin-bottom: 5px;
-  color: var(--primary);
+/* Input Hover & Focus Effects */
+.container input:focus,
+.container textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0px 0px 10px var(--accent);
+  outline: none;
 }
 
-fieldset {
-  border: none;
-  /* Remove default border */
-  text-align: center;
-  /* Center the entire fieldset */
-  margin-bottom: 15px;
+/* Radio Button Styles */
+.radio-group {
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 8px;
 }
 
-/* Align radio buttons properly */
-fieldset input[type="radio"] {
-  margin: 5px;
-}
-
-fieldset label {
-  font-size: 1rem;
-  font-family: 'Lora', serif;
-  color: var(--highlight);
-  margin-right: 10px;
-}
-
-legend {
+.radio-group p {
+  font-size: 1.1rem;
   font-weight: bold;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.radio-group input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.radio-group input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border-radius: 50%;
+}
+
+.radio-group label {
+  font-size: 1rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.radio-group label:hover {
   color: var(--accent);
 }
 
+/* Submit Button */
 button {
   background-color: var(--accent);
   color: var(--background);
   border: none;
-  padding: 10px;
+  padding: 12px;
   margin-top: 15px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Button Hover Effect */
 button:hover {
   background-color: var(--secondary);
-  text-shadow: 0px 0px 8px var(--secondary);
+  box-shadow: 0px 0px 12px var(--secondary);
 }
 
 
 
-/* Center the text above radio buttons */
-.container .radio-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15px;
-}
 
-.container .radio-group p {
-  font-size: 1.2rem;
-  font-family: 'Lora', serif;
-  text-align: center;
-  /* Ensures question text is centered */
-  margin-bottom: 10px;
-  color: var(--primary);
-}
-
-/* Center the radio buttons and labels */
-.container .radio-group label {
-  display: inline-block;
-  margin-right: 15px;
-  font-size: 1rem;
-  color: var(--highlight);
-}
-
-/* Make sure radio buttons are aligned properly */
-.container .radio-group input[type="radio"] {
-  margin-right: 5px;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Larger screens such as desktops */
+/* Media Queries */
 @media screen and (min-width: 1920px) {
   .main-title {
     font-size: 6rem;
-  }
-
-  h1 {
-    font-size: 5rem;
-  }
-
-  blockquote {
-    font-size: 1.5rem;
   }
 
   .about {
@@ -541,123 +449,11 @@ button:hover {
   .library-table {
     width: 80%;
   }
-
-  .library-bq {
-    width: 80%;
-    font-size: 1.5rem;
-  }
-
-  .library-heading {
-    font-size: 3rem;
-  }
 }
 
-/* For Tablets and larger smartphones */
-@media screen and (min-width: 600px) and (max-width: 1023px) {
-  #myNavList {
-    padding: 15px 0;
-  }
-
-  #myNavList li {
-    margin: 0 15px;
-  }
-
-  #myNavList a {
-    font-size: 1.1rem;
-  }
-
-  .main-title {
-    font-size: 4rem;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  blockquote {
-    font-size: 1.3rem;
-  }
-
-  .about {
-    max-width: 70%;
-    padding: 35px 20px;
-  }
-
-  .blog-posts {
-    max-width: 90%;
-  }
-
-  .post-title {
-    font-size: 3.5rem;
-  }
-
-  .sub-title {
-    font-size: 2.5rem;
-  }
-
-  .library-table {
-    width: 90%;
-  }
-
-  .library-bq {
-    width: 90%;
-    font-size: 1.3rem;
-  }
-
-  .library-heading {
-    font-size: 2.5rem;
-  }
-
-  .container {
-    width: 70%;
-  }
-}
-
-/* For Mobile Devices */
 @media screen and (max-width: 599px) {
-  #myNavList {
-    flex-direction: column;
-    /* Stack navigation items vertically */
-    align-items: stretch;
-    /* Make items take full width */
-    padding: 10px;
-  }
-
-  #myNavList li {
-    margin: 5px 0;
-    /* Add vertical spacing */
-    text-align: center;
-    /* Center the text */
-  }
-
-  #myNavList a {
-    display: block;
-    /* Make each link a block element */
-    padding: 10px;
-    /* Add some padding for better touch area */
-    border-bottom: 1px solid var(--border);
-    /* Add a border to separate items */
-  }
-
   .main-title {
     font-size: 2.5rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  blockquote {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .about {
-    padding: 20px 10px;
-  }
-
-  .blog-posts {
-    padding: 20px 10px;
   }
 
   .post-title {
@@ -668,44 +464,9 @@ button:hover {
     font-size: 1.8rem;
   }
 
-  .post-date {
-    font-size: 1rem;
-  }
-
+  .post-date,
   .post-author {
     font-size: 1rem;
-  }
-
-  .post-summary {
-    font-size: 0.9rem;
-  }
-
-  .post-content p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-
-  .library-table {
-    width: 100%;
-    font-size: 0.8rem;
-  }
-
-  .library-table th,
-  .library-table td {
-    padding: 6px;
-  }
-
-  .library-table th {
-    font-size: 0.9rem;
-  }
-
-  .library-bq {
-    width: 95%;
-    font-size: 1.1rem;
-  }
-
-  .library-heading {
-    font-size: 1.8rem;
   }
 
   .container {
@@ -718,15 +479,5 @@ button:hover {
 
   .container label {
     font-size: 0.9rem;
-  }
-
-  .yes-no-box {
-    width: 90%;
-  }
-
-  .yes-no-box button {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    margin: 6px;
   }
 }
